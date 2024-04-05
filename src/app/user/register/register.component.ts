@@ -1,13 +1,19 @@
 import { Component } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { NgForm, NgModel } from '@angular/forms';
+import { UserService } from '../user.service';
 
 @Component({
-  selector: 'app-register',
-  templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
+    selector: 'app-register',
+    templateUrl: './register.component.html',
+    styleUrls: ['./register.component.css'],
 })
 export class RegisterComponent {
-	registerHandler(form:NgForm) {
-		console.log(form.valid)
-	}
+    constructor(private userService: UserService) {}
+    registerHandler(form: NgForm, emailInput: NgModel, passwordInput: NgModel) {
+        if (form.invalid) {
+            return;
+        }
+
+        this.userService.signUp(emailInput.value, passwordInput.value);
+    }
 }
