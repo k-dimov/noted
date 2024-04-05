@@ -1,5 +1,11 @@
 span {
-    margin: 0.5em 0.5em
+    margin: 0.5em 0.5em;
+}
+
+a {
+    margin: 0.5em;
+    display: flex;
+    align-items: center;
 }
 
 img {
@@ -11,11 +17,16 @@ img {
 }
 
 .header-container {
+    width: 100vw;
     display: flex;
     align-items: center;
+    justify-content: space-between;
 }
 
 .nav {
     display: flex;
-    justify-self: ;
+    font-size: 1.6em;
+}
+.profile-icon {
+    transform: scale(2);
 }
