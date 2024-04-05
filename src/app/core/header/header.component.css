@@ -1,5 +1,10 @@
+a, span {
+    cursor: pointer;
+}
+
 span {
     margin: 0.5em 0.5em;
+    display: flex;
 }
 
 a {
@@ -9,7 +14,8 @@ a {
 }
 
 img {
-    width: 50%
+    width: 100%;
+    background-size: cover
 }
 
 .header {
@@ -29,4 +35,8 @@ img {
 }
 .profile-icon {
     transform: scale(2);
+}
+
+#logo {
+    width: 9em
 }
