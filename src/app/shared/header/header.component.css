@@ -1,0 +1,21 @@
+span {
+    margin: 0.5em 0.5em
+}
+
+img {
+    width: 50%
+}
+
+.header {
+    background-color: #D8AE1C;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+}
+
+.nav {
+    display: flex;
+    justify-self: ;
+}
