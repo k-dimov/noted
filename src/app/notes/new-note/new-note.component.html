@@ -1,0 +1,35 @@
+<form #form="ngForm" (ngSubmit)="handleCreateNote(form)">
+    <h3>Create a note</h3>
+    <mat-form-field>
+        <mat-label>Note theme</mat-label>
+        <input
+            matInput
+            type="text"
+            name="theme"
+            id="theme"
+            #themeInput="ngModel"
+            ngModel
+            required
+        />
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Privacy</mat-label>
+        <mat-select
+            name="select"
+            id="select"
+            required
+            #publicInput="ngModel"
+            ngModel
+        >
+            <mat-option value="public">Public</mat-option>
+            <mat-option value="private">Private</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Textarea</mat-label>
+        <textarea type="text" name="text" id="text" matInput #textInput="ngModel" ngModel></textarea>
+    </mat-form-field>
+
+    <button mat-flat-button color="accent">Create</button>
+
+</form>

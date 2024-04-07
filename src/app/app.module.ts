@@ -11,6 +11,8 @@ import { CoreModule } from './core/core.module';
 import { UserModule } from './user/user.module';
 import { HomeComponent } from './home/home.component';
 import { UserRoutingModule } from './user/user-routing.module';
+import { NotesRoutingModule } from './notes/notes-routing.module';
+import { NotesModule } from './notes/notes.module';
 
 @NgModule({
     declarations: [AppComponent, HomeComponent],
@@ -22,7 +24,9 @@ import { UserRoutingModule } from './user/user-routing.module';
         UserModule,
         UserRoutingModule,
         AngularFireModule.initializeApp(environment.firebase),
-        AngularFireAuthModule
+        AngularFireAuthModule,
+        NotesModule,
+        NotesRoutingModule
     ],
     providers: [],
     bootstrap: [AppComponent],

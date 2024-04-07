@@ -1,0 +1,22 @@
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10em
+}
+
+h3 {
+    margin-bottom: 2em;
+    font-size: 2em;
+    align-self: center;
+}
+
+button {
+    margin-top: 1em;
+}
+
+
+mat-form-field {
+    width: 30em
+}

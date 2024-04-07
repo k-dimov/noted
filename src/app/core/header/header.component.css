@@ -33,7 +33,7 @@ img {
     display: flex;
     font-size: 1.6em;
 }
-.profile-icon {
+.profile-icon, .plus-box {
     transform: scale(2);
 }
 
