@@ -9,11 +9,11 @@ import { UserService } from '../user.service';
 })
 export class RegisterComponent {
     constructor(private userService: UserService) {}
-    registerHandler(form: NgForm, emailInput: NgModel, passwordInput: NgModel) {
+    registerHandler(form: NgForm, emailInput: NgModel, passwordInput: NgModel, username: NgModel) {
         if (form.invalid) {
             return;
         }
 
-        this.userService.signUp(emailInput.value, passwordInput.value);
+        this.userService.signUp(emailInput.value, passwordInput.value, username.value);
     }
 }

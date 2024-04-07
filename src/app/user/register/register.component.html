@@ -1,7 +1,7 @@
 <div id="form-container">
     <h3>Sign-up for an account</h3>
 
-    <form #form="ngForm" (ngSubmit)="registerHandler(form, emailInput, passwordInput)">
+    <form #form="ngForm" (ngSubmit)="registerHandler(form, emailInput, passwordInput, usernameInput)">
         <mat-form-field>
             <mat-label>Username</mat-label>
             <input
@@ -12,6 +12,7 @@
                 ngModel
                 required
                 minlength="4"
+                #usernameInput="ngModel"
             />
         </mat-form-field>
 

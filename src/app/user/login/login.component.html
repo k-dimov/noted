@@ -1,7 +1,7 @@
 <div id="form-container">
     <h3>Sign-in to your account</h3>
 
-    <form #form="ngForm" (ngSubmit)="loginHandler(form)">
+    <form #form="ngForm" (ngSubmit)="loginHandler(form, emailInput, passwordInput)">
         <mat-form-field>
             <mat-label>Email</mat-label>
             <input
@@ -12,6 +12,7 @@
                 ngModel
                 required
                 email
+                #emailInput="ngModel"
             />
         </mat-form-field>
 
@@ -25,6 +26,7 @@
                 ngModel
                 required
                 minlength="6"
+                #passwordInput="ngModel"
             />
         </mat-form-field>
 

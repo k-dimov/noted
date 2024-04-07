@@ -1,14 +1,26 @@
 <mat-toolbar role="heading" class="header">
     <div class="header-container">
-        <span id="logo">
+        <span id="logo" routerLink="home">
             <img src="../../../assets/images/NOTED.png" alt="NOTED">
         </span>
 
         <div class="nav">
-            <span routerLink="/login">Login</span>
-            <span routerLink="/register">Register</span>
-            <a>
-                <mat-icon class="profile-icon" >account_circle</mat-icon>
+            <ng-container *ngIf="!(userService.loggedIn$ | async)">
+                <span routerLink="/login">Login</span>
+                <span routerLink="/register">Register</span>
+            </ng-container>
+            <a *ngIf="(userService.loggedIn$ | async)">
+                <button mat-button [matMenuTriggerFor]="loggedInMenu">
+                    <mat-icon class="profile-icon" >account_circle</mat-icon>
+                </button>
+                <mat-menu #loggedInMenu="matMenu">
+                    <button mat-menu-item routerLink="profile">
+                        Profile
+                    </button>
+                    <button mat-menu-item (click)="handleLogout()">
+                        Logout
+                    </button>
+                </mat-menu>
             </a>
         </div>
     </div>

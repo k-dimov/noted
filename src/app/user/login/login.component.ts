@@ -1,16 +1,23 @@
 import { Component } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { NgForm, NgModel } from '@angular/forms';
+import { UserService } from '../user.service';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+    selector: 'app-login',
+    templateUrl: './login.component.html',
+    styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
-	loginHandler(form: NgForm):void {
-		if (form.invalid) {
-			return
-		}
-		
-	}
+    constructor(private userService: UserService) {}
+
+    loginHandler(
+        form: NgForm,
+        emailInput: NgModel,
+        passwordInput: NgModel
+    ): void {
+        if (form.invalid) {
+            return;
+        }
+        this.userService.signIn(emailInput.value, passwordInput.value);
+    }
 }
