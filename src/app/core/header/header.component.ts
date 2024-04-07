@@ -1,4 +1,4 @@
-import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Component } from '@angular/core';
 import { UserService } from 'src/app/user/user.service';
 
 @Component({
@@ -8,7 +8,7 @@ import { UserService } from 'src/app/user/user.service';
 })
 export class HeaderComponent {
 
-    constructor(public userService: UserService) {}
+    constructor(public userService:UserService) {}
 
 
 	handleLogout():void {
