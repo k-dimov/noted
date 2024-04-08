@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { NotesService } from '../notes.service';
 
 @Component({
     selector: 'app-new-note',
@@ -7,7 +8,14 @@ import { NgForm } from '@angular/forms';
     styleUrls: ['./new-note.component.css'],
 })
 export class NewNoteComponent {
+
+    constructor(private notesService: NotesService) {
+    }
+
     handleCreateNote(form: NgForm) {
-		console.log(form.value)
+		if (form.invalid) {
+            return;
+        }
+        this.notesService.createNote(form.value)
 	}
 }
