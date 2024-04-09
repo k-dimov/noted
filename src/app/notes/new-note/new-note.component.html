@@ -1,12 +1,12 @@
 <form #form="ngForm" (ngSubmit)="handleCreateNote(form)">
     <h3>Create a note</h3>
     <mat-form-field>
-        <mat-label>Note theme</mat-label>
+        <mat-label>Note title</mat-label>
         <input
             matInput
             type="text"
-            name="theme"
-            id="theme"
+            name="title"
+            id="title"
             #themeInput="ngModel"
             ngModel
             required

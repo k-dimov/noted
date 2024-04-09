@@ -13,6 +13,7 @@ import { HomeComponent } from './home/home.component';
 import { UserRoutingModule } from './user/user-routing.module';
 import { NotesRoutingModule } from './notes/notes-routing.module';
 import { NotesModule } from './notes/notes.module';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
     declarations: [AppComponent, HomeComponent],
@@ -26,7 +27,8 @@ import { NotesModule } from './notes/notes.module';
         AngularFireModule.initializeApp(environment.firebase),
         AngularFireAuthModule,
         NotesModule,
-        NotesRoutingModule
+        NotesRoutingModule,
+        MatCardModule
     ],
     providers: [],
     bootstrap: [AppComponent],

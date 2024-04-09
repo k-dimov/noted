@@ -1,1 +1,6 @@
-<p>home works!</p>
+<ng-container id="notes-wrapper" >
+    <mat-card *ngFor="let note of notesList">
+        <mat-card-header>{{note.title}}</mat-card-header>
+        <mat-card-content>{{note.text}}</mat-card-content>
+    </mat-card>
+</ng-container>

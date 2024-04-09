@@ -9,6 +9,10 @@ import { Note } from '../types/Note';
 export class NotesService {
     constructor(private afs: AngularFirestore) {}
 
+    getAll() {
+        return this.afs.collection('notes').snapshotChanges()
+    }
+
     createNote(note: Note) {
 		return this.afs.collection('notes').add(note)
 	};
