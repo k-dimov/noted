@@ -14,6 +14,8 @@ import { UserRoutingModule } from './user/user-routing.module';
 import { NotesRoutingModule } from './notes/notes-routing.module';
 import { NotesModule } from './notes/notes.module';
 import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
     declarations: [AppComponent, HomeComponent],
@@ -28,7 +30,9 @@ import { MatCardModule } from '@angular/material/card';
         AngularFireAuthModule,
         NotesModule,
         NotesRoutingModule,
-        MatCardModule
+        MatCardModule,
+        MatButtonModule,
+        SharedModule
     ],
     providers: [],
     bootstrap: [AppComponent],
