@@ -10,7 +10,7 @@ export class NotesService {
     constructor(private afs: AngularFirestore) {}
 
     getAll() {
-        return this.afs.collection('notes').snapshotChanges()
+        return this.afs.collection('notes').snapshotChanges();
     }
 
     createNote(note: Note) {

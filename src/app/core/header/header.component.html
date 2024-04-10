@@ -10,7 +10,7 @@
                 <span routerLink="/register">Register</span>
             </ng-container>
             <a *ngIf="userService.loggedIn$ | async">
-                <button mat-button routerLink="new-note">
+                <button mat-button routerLink="/notes/new-note">
                     <mat-icon class="plus-box"> add_box </mat-icon>
                 </button>
                 <button mat-button [matMenuTriggerFor]="loggedInMenu">

@@ -6,11 +6,11 @@ const routes: Routes = [
     {
         path: '',
         pathMatch: 'full',
-        component: HomeComponent,
+        redirectTo: '/notes',
     },
     {
         path: 'home',
-        redirectTo: '/'
+        redirectTo: '/notes'
     }
 ];
 

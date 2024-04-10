@@ -1,16 +1,15 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CurrentNoteComponent } from './current-note.component';
-
+import { NoteDetailsComponent } from './note-details.component';
 describe('CurrentNoteComponent', () => {
-  let component: CurrentNoteComponent;
-  let fixture: ComponentFixture<CurrentNoteComponent>;
+  let component: NoteDetailsComponent;
+  let fixture: ComponentFixture<NoteDetailsComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [CurrentNoteComponent]
+      declarations: [NoteDetailsComponent]
     });
-    fixture = TestBed.createComponent(CurrentNoteComponent);
+    fixture = TestBed.createComponent(NoteDetailsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

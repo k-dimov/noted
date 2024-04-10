@@ -18,5 +18,6 @@ export class HomeComponent implements OnInit {
 				return i.payload.doc.data() as Note
 			})
 		})
+		
 	}
 }

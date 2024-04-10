@@ -5,12 +5,15 @@ mat-card {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    flex-wrap: wrap;
 }
 
 mat-card-header {
     font-weight: bold;
     margin-bottom: 0.5em;
+}
+
+mat-card-content {
+    text-wrap: wrap;
 }
 
 #notes-wrapper {
