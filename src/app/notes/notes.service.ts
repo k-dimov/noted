@@ -13,7 +13,14 @@ export class NotesService {
         return this.afs.collection('notes').snapshotChanges();
     }
 
+    get(id: string) {
+        return this.afs.collection('notes').doc(`${id}`).snapshotChanges();
+
+    }
+
     createNote(note: Note) {
 		return this.afs.collection('notes').add(note)
 	};
+
+
 }

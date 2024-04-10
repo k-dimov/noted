@@ -15,7 +15,9 @@ export class HomeComponent implements OnInit {
 	ngOnInit(): void {
 		this.notesService.getAll().subscribe(res => {
 			this.notesList = res.map(i => {
-				return i.payload.doc.data() as Note
+				const id = i.payload.doc.id;
+				const currNote = i.payload.doc.data() as {title: string, privacy: string, text: string}
+				return {id, ...currNote} as Note
 			})
 		})
 		
