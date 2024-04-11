@@ -9,9 +9,12 @@ import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { NoteDetailsComponent } from './note-details/note-details.component';
 import { MatCardModule } from '@angular/material/card';
+import { MyNotesComponent } from './my-notes/my-notes.component';
+import { RouterModule } from '@angular/router';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
-    declarations: [NewNoteComponent, NoteDetailsComponent],
+    declarations: [NewNoteComponent, NoteDetailsComponent, MyNotesComponent],
     imports: [
         CommonModule,
         MatFormFieldModule,
@@ -20,6 +23,8 @@ import { MatCardModule } from '@angular/material/card';
         FormsModule,
         MatButtonModule,
         MatCardModule,
+        RouterModule,
+        SharedModule,
     ],
     exports: [NotesRoutingModule],
 })

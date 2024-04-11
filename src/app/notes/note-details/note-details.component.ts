@@ -15,16 +15,21 @@ export class NoteDetailsComponent implements OnInit, OnDestroy {
     privacy: string = '';
     isEditOpen: boolean = false;
     note$: Subscription = Subscription.EMPTY;
+    ownerId: string = '';
     constructor(
         private notesService: NotesService,
         private route: ActivatedRoute,
         private router: Router
     ) {}
     ngOnInit(): void {
+        if(localStorage.getItem('user')) {
+            this.ownerId = JSON.parse(localStorage.getItem('user') as string).uid;
+        }
+
         const id = this.route.snapshot.params['id'];
         this.note$ = this.notesService.get(id).subscribe((res) => {
             this.note = res.payload.data() as Note;
-            if(!this.note) {
+            if (!this.note) {
                 this.router.navigate(['/notes']);
             } else {
                 this.note.id = id;

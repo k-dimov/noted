@@ -3,8 +3,7 @@
         <mat-card-header>{{ note.title }}</mat-card-header>
         <mat-card-content>{{ note.text }}</mat-card-content>
         <mat-card-actions>
-            <button mat-flat-button id="comment-button">Comment</button>
-            <ng-container>
+            <ng-container *ngIf="note.ownerId === ownerId">
                 <button mat-flat-button color="accent" (click)="toggleEdit()">
                     Edit
                 </button>

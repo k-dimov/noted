@@ -13,13 +13,12 @@ export class HomeComponent implements OnInit {
 	constructor(private notesService: NotesService) {}
 
 	ngOnInit(): void {
-		this.notesService.getAll().subscribe(res => {
+		this.notesService.getByPrivacy('public').subscribe(res => {
 			this.notesList = res.map(i => {
 				const id = i.payload.doc.id;
 				const currNote = i.payload.doc.data() as {title: string, privacy: string, text: string}
 				return {id, ...currNote} as Note
 			})
 		})
-		
 	}
 }

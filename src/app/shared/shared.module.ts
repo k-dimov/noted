@@ -11,6 +11,9 @@ import { EllipsisPipe } from './pipes/ellipsis.pipe';
   imports: [
     CommonModule
   ],
+  providers: [
+    EllipsisPipe
+  ],
   exports: [
     EllipsisPipe
   ]

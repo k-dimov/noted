@@ -21,7 +21,6 @@ import { SharedModule } from './shared/shared.module';
     declarations: [AppComponent, HomeComponent],
     imports: [
         BrowserModule,
-        AppRoutingModule,
         BrowserAnimationsModule,
         UserModule,
         CoreModule,
@@ -32,7 +31,8 @@ import { SharedModule } from './shared/shared.module';
         NotesRoutingModule,
         MatCardModule,
         MatButtonModule,
-        SharedModule
+        SharedModule,
+        AppRoutingModule
     ],
     providers: [],
     bootstrap: [AppComponent],

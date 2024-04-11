@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { Note } from '../types/Note';
+import { query } from '@angular/animations';
 
 @Injectable({
     providedIn: 'root',
@@ -9,8 +10,13 @@ import { Note } from '../types/Note';
 export class NotesService {
     constructor(private afs: AngularFirestore) {}
 
-    getAll() {
-        return this.afs.collection('notes').snapshotChanges();
+    getAllById(ownerId:string) {
+        return this.afs.collection('notes', ref => ref.where('ownerId', '==', ownerId)).snapshotChanges();
+    }
+
+    getByPrivacy(privacy: string ) {
+        return this.afs.collection('notes', ref => ref.where('privacy', '==', privacy)).snapshotChanges();
+
     }
 
     get(id: string) {

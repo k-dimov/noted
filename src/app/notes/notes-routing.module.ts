@@ -4,6 +4,7 @@ import { NewNoteComponent } from './new-note/new-note.component';
 import { HomeComponent } from '../home/home.component';
 import { NoteDetailsComponent } from './note-details/note-details.component';
 import { AuthLoggedActivate } from '../shared/guards/authLogged.activate';
+import { MyNotesComponent } from './my-notes/my-notes.component';
 
 const routes: Routes = [
     {
@@ -12,19 +13,19 @@ const routes: Routes = [
             {
                 path: '',
                 pathMatch: 'full',
-                component: HomeComponent
+                component: HomeComponent,
             },
             {
                 path: 'new-note',
                 component: NewNoteComponent,
-                canActivate: [AuthLoggedActivate]
+                canActivate: [AuthLoggedActivate],
             },
             {
                 path: ':id',
-                component: NoteDetailsComponent
-            }
-        ]
-    }
+                component: NoteDetailsComponent,
+            },
+        ],
+    },
 ];
 
 @NgModule({
