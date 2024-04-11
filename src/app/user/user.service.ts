@@ -4,37 +4,38 @@ import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
 import { User } from '@angular/fire/auth';
 
-
 @Injectable({
     providedIn: 'root',
 })
 export class UserService {
-
-    constructor(private afAuth: AngularFireAuth, private router: Router) {
-    }
+    user: User = {} as User;
+    constructor(private afAuth: AngularFireAuth, private router: Router) {}
 
     get isLoggedIn() {
-        return localStorage.getItem('user')!!
+        return localStorage.getItem('user')!!;
     }
 
     async getUser() {
         let user: User = (await this.afAuth.currentUser) as User;
         return user;
     }
-
+    editUser() {
+        this.afAuth.currentUser.then()
+    }
     signUp(email: string, password: string, username: string): void {
         this.afAuth
             .createUserWithEmailAndPassword(email, password)
             .then((res) => {
-                res.user?.updateProfile({
+                return res.user?.updateProfile({
                     displayName: username,
                 });
-                this.getUser().then(this.saveUser);
-
-                this.router.navigate(['/']);
             })
             .catch((err) => {
                 console.error(err);
+            })
+            .finally(() => {
+                this.getUser().then((u) => this.saveUser(u));
+                this.router.navigate(['/notes']);
             });
     }
 

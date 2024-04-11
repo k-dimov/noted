@@ -1,2 +1,47 @@
-<!-- <h3>{{currUser?.displayName}}</h3> -->
-<p>works</p>
+<div class="card-wrapper">
+    <ng-container *ngIf="!isEditOpen">
+        <mat-card>
+            <mat-card-header>Name:</mat-card-header>
+            <mat-card-content>{{ user.displayName }}</mat-card-content>
+            <mat-card-header>Email:</mat-card-header>
+            <mat-card-content>{{ user.email }}</mat-card-content>
+            <mat-card-header>Created:</mat-card-header>
+            <mat-card-content>{{ user.createdOn }}</mat-card-content>
+        </mat-card>
+    </ng-container>
+    <!-- <ng-container *ngIf="isEditOpen">
+        <mat-card>
+            <form #form="ngForm" (ngSubmit)="handleEdit(form)">
+                <mat-form-field>
+                    <mat-label>Username</mat-label>
+                    <input
+                        matInput
+                        type="text"
+                        name="username"
+                        id="username"
+                        ngModel
+                        required
+                        minlength="4"
+                        #usernameInput="ngModel"
+                    />
+                </mat-form-field>
+        
+                <mat-form-field>
+                    <mat-label>Email</mat-label>
+                    <input
+                        matInput
+                        type="email"
+                        name="email"
+                        id="email"
+                        #emailInput="ngModel"
+                        ngModel
+                        required
+                        email
+                    />
+                </mat-form-field>
+            <mat-card-header>Created:</mat-card-header>
+            <mat-card-content>{{ user.createdOn }}</mat-card-content>
+        </mat-card>
+    </ng-container> -->
+    <!-- <button mat-flat-button color="accent" (click)="toggleEdit()">Edit</button> -->
+</div>

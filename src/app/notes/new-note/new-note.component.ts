@@ -9,14 +9,18 @@ import { Router } from '@angular/router';
     styleUrls: ['./new-note.component.css'],
 })
 export class NewNoteComponent {
-    constructor(private notesService: NotesService, private router: Router) {}
+    userJSON: string = localStorage.getItem('user') as string
+    ownerId: string = ''
+    constructor(private notesService: NotesService, private router: Router) {
+        this.ownerId = JSON.parse(this.userJSON).uid;
+    }
 
     handleCreateNote(form: NgForm) {
         if (form.invalid) {
             return;
         }
         try {
-            this.notesService.createNote(form.value);
+            this.notesService.createNote({ownerId: this.ownerId,...form.value});
             this.router.navigate(['/']);
         } catch (err) {
             console.error(err);

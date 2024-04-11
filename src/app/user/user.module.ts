@@ -9,6 +9,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { FormsModule } from '@angular/forms';
+import { MatCardModule } from '@angular/material/card';
 @NgModule({
     declarations: [LoginComponent, RegisterComponent, ProfileComponent],
     imports: [
@@ -18,6 +19,7 @@ import { FormsModule } from '@angular/forms';
         MatInputModule,
         MatButtonModule,
         FormsModule,
+        MatCardModule
     ],
     exports: [UserRoutingModule],
 })

@@ -19,9 +19,7 @@ export class AuthNotLoggedActivate implements CanActivate {
         if (!this.userSerivce.isLoggedIn) {
             return true;
         } else {
-            debugger;
             this.router.navigate(['/notes']);
-            debugger;
             return false;
         }
     }
