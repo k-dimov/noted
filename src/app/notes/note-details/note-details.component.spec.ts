@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { NoteDetailsComponent } from './note-details.component';
-describe('CurrentNoteComponent', () => {
+describe('NoteDetailsComponent', () => {
   let component: NoteDetailsComponent;
   let fixture: ComponentFixture<NoteDetailsComponent>;
 

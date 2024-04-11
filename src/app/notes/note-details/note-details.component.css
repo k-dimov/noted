@@ -1,0 +1,29 @@
+mat-card {
+    min-height: 10em;
+    margin: 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+mat-card-header {
+    font-weight: bold;
+    margin-bottom: 0.5em;
+}
+
+mat-card-content {
+    text-wrap: wrap;
+    display: flex;
+    flex-direction: column;
+}
+
+button {
+    margin: 0.5em
+}
+
+#comment-button {
+    background-color: #D8AE1C
+}
+
+#delete-button {
+    background-color: rgb(233, 49, 49);
+}

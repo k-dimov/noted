@@ -1,0 +1,65 @@
+<mat-card>
+    <ng-container *ngIf="!isEditOpen">
+        <mat-card-header>{{ note.title }}</mat-card-header>
+        <mat-card-content>{{ note.text }}</mat-card-content>
+        <mat-card-actions>
+            <button mat-flat-button id="comment-button">Comment</button>
+            <ng-container>
+                <button mat-flat-button color="accent" (click)="toggleEdit()">
+                    Edit
+                </button>
+                <button mat-flat-button id="delete-button" (click)="handleDelete()">Delete</button>
+            </ng-container>
+        </mat-card-actions>
+    </ng-container>
+    <ng-container *ngIf="isEditOpen">
+        <form #form="ngForm" (ngSubmit)="handleEdit(form)">
+            <mat-card-header>
+                <mat-form-field>
+                    <mat-label>Note title</mat-label>
+                    <input
+                        matInput
+                        type="text"
+                        name="title"
+                        id="title"
+                        #titleInput="ngModel"
+                        [(ngModel)]="note.title"
+                        required
+                    />
+                </mat-form-field>
+            </mat-card-header>
+            <mat-card-content>
+                <mat-form-field>
+                    <mat-label>Privacy</mat-label>
+                    <mat-select
+                        name="privacy"
+                        id="privacy"
+                        required
+                        #privacyInput="ngModel"
+                        [(ngModel)]="privacy"
+                    >
+                        <mat-option value="public">Public</mat-option>
+                        <mat-option value="private">Private</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Text</mat-label>
+                    <textarea
+                        type="text"
+                        name="text"
+                        id="text"
+                        matInput
+                        #textInput="ngModel"
+                        [(ngModel)]="note.text"
+                    ></textarea>
+                </mat-form-field>
+            </mat-card-content>
+            <mat-card-actions>
+                <button mat-flat-button color="accent" [disabled]="form.invalid">
+                    Save
+                </button>
+                <button mat-flat-button id="delete-button" (click)="toggleEdit()" type="button">Cancel</button>
+            </mat-card-actions>
+        </form>
+    </ng-container>
+</mat-card>
