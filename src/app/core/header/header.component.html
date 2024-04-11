@@ -5,11 +5,11 @@
         </span>
 
         <div class="nav">
-            <ng-container *ngIf="!(userService.loggedIn$ | async)">
+            <ng-container *ngIf="!userService.isLoggedIn">
                 <span routerLink="/login">Login</span>
                 <span routerLink="/register">Register</span>
             </ng-container>
-            <a *ngIf="userService.loggedIn$ | async">
+            <a *ngIf="userService.isLoggedIn">
                 <button mat-button routerLink="/notes/new-note">
                     <mat-icon class="plus-box"> add_box </mat-icon>
                 </button>

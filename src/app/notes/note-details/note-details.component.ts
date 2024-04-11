@@ -24,9 +24,12 @@ export class NoteDetailsComponent implements OnInit, OnDestroy {
         const id = this.route.snapshot.params['id'];
         this.note$ = this.notesService.get(id).subscribe((res) => {
             this.note = res.payload.data() as Note;
-            this.note.id = id;
-            this.privacy = this.note.privacy;
-            console.log(this.note);
+            if(!this.note) {
+                this.router.navigate(['/notes']);
+            } else {
+                this.note.id = id;
+                this.privacy = this.note.privacy;
+            }
         });
     }
 

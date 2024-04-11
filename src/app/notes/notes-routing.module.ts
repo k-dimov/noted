@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { NewNoteComponent } from './new-note/new-note.component';
 import { HomeComponent } from '../home/home.component';
 import { NoteDetailsComponent } from './note-details/note-details.component';
+import { AuthLoggedActivate } from '../shared/guards/authLogged.activate';
 
 const routes: Routes = [
     {
@@ -16,6 +17,7 @@ const routes: Routes = [
             {
                 path: 'new-note',
                 component: NewNoteComponent,
+                canActivate: [AuthLoggedActivate]
             },
             {
                 path: ':id',

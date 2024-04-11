@@ -4,23 +4,17 @@ import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
 import { User } from '@angular/fire/auth';
 
-import { getDatabase, ref, set } from '@angular/fire/database';
 
 @Injectable({
     providedIn: 'root',
 })
 export class UserService {
-    loggedIn = new BehaviorSubject<boolean>(false);
-    loggedIn$ = this.loggedIn.asObservable();
 
     constructor(private afAuth: AngularFireAuth, private router: Router) {
-        this.afAuth.onAuthStateChanged((user) => {
-            if (user) {
-                this.loggedIn.next(true);
-            } else {
-                this.loggedIn.next(false);
-            }
-        });
+    }
+
+    get isLoggedIn() {
+        return localStorage.getItem('user')!!
     }
 
     async getUser() {
